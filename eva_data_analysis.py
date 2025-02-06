@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import pandas as pd
+import sys
 
 
 def read_json_to_dataframe(input_file):
@@ -98,17 +99,17 @@ def plot_cumulative_time_in_space(df, graph_file):
 if __name__ == "__main__":
     print("--START--")
 
-    if len(sys.argv) < 3
-        input_file = open('./eva-data.json', 'r', encoding='utf-8')
-        output_file = open('./eva-data.csv', 'w', encoding='utf-8')
+    if len(sys.argv) < 3:
+        input_file = open('data/eva-data.json', 'r', encoding='utf-8')
+        output_file = open('results/eva-data.csv', 'w', encoding='utf-8')
         print(f'using default input and output filenames')
               
     else:
         input_file = sys.argv[1]
         output_file = sys.argv[2]
-        print(f'using input file: {input_file} and output file: {output_file}'
+        print(f'using input file: {input_file} and output file: {output_file}')
     
-    graph_file = './cumulative_eva_graph.png'
+    graph_file = 'results/cumulative_eva_graph.png'
 
     eva_data = read_json_to_dataframe(input_file)
 
