@@ -39,7 +39,7 @@ def write_dataframe_to_csv(eva_df, output_file):
     print(f'Saving  to CSV file {output_file}...')
     eva_df.to_csv(output_file, index=False)
 
-def plot_data_and_save(eva_df, graph_file):
+def plot_cumulative_time_in_space(eva_df, graph_file):
     """
     Calculate the cumulative time spent in space to date, plot, and save the data.
 
@@ -75,4 +75,4 @@ eva_df = read_json_to_dataframe(input_file)
 write_dataframe_to_csv(eva_df, output_file)
 
 # Plot the cumulative time spent in space to date
-plot_data_and_save(eva_df, graph_file)
+plot_cumulative_time_in_space(eva_df, graph_file)
