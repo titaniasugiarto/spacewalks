@@ -95,17 +95,25 @@ def plot_cumulative_time_in_space(df, graph_file):
 
 
 # Main code
+if __name__ == "__main__":
+    print("--START--")
 
-print("--START--")
+    if len(sys.argv) < 3
+        input_file = open('./eva-data.json', 'r', encoding='utf-8')
+        output_file = open('./eva-data.csv', 'w', encoding='utf-8')
+        print(f'using default input and output filenames')
+              
+    else:
+        input_file = sys.argv[1]
+        output_file = sys.argv[2]
+        print(f'using input file: {input_file} and output file: {output_file}'
+    
+    graph_file = './cumulative_eva_graph.png'
 
-input_file = open('./eva-data.json', 'r')
-output_file = open('./eva-data.csv', 'w')
-graph_file = './cumulative_eva_graph.png'
+    eva_data = read_json_to_dataframe(input_file)
 
-eva_data = read_json_to_dataframe(input_file)
+    write_dataframe_to_csv(eva_data, output_file)
 
-write_dataframe_to_csv(eva_data, output_file)
+    plot_cumulative_time_in_space(eva_data, graph_file)
 
-plot_cumulative_time_in_space(eva_data, graph_file)
-
-print("--END--")
+    print("--END--")
