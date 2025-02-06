@@ -1,2 +1,3 @@
 venv_*
-_pychache_
+__pychache__
+.coverage
